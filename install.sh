@@ -1,22 +1,10 @@
 #!/usr/bin/bash
-spinner=("=====" ">====" "=>===" "==>==" "===>=" "====>" "-----")
 
-loadbar() {
-    while [ 1 ]
-    do
-        for i in "${spinner[@]}"
-        do
-            echo -ne "\rInstalling $i"
-            sleep 0.2
-        done
-    done
-}
+echo "Installing Nvim config"
+ln -srf ./nvim ~/.config/nvim
 
-loadbar &
-loadPid=$!
+echo "Installing Kitty config"
+ln -srf ./kitty ~/.config/kitty
 
-ls -d */ | xargs stow --dotfiles -S $1; sleep 0.2
-sleep 2.0
-
-printf "\n"
-kill $loadPid
+echo "Installing ZSH config"
+ln -srf ./zsh/dot-zshrc ~/.zshrc
