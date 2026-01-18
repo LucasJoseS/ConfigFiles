@@ -8,7 +8,7 @@ return {
       org_default_notes_file = '~/.orgfiles/refile.org',
     })
 
-    require('nvim-treesitter.configs').setup({
+    require('nvim-treesitter').setup({
       ignore_install = { 'org' },
     })
   end,

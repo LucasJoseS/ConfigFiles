@@ -48,6 +48,12 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# Keyboard
+# setxkbmap br abnt2 # Only for X11
+
+# Aliases
+alias shutdown='shutdown 0'
+
 # History
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
@@ -64,3 +70,8 @@ setopt hist_find_no_dups
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Created by `pipx` on 2024-10-12 23:07:25
+export PATH="$PATH:/home/nix/.local/bin"
+
+[ -f "/home/nix/.ghcup/env" ] && . "/home/nix/.ghcup/env" # ghcup-env
